@@ -2,8 +2,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import logo from "../assets/logo.svg";
-import { Menu } from "@mui/icons-material";
-import IconButton from "@mui/material/IconButton";
+// import { Menu } from "@mui/icons-material";
+// import IconButton from "@mui/material/IconButton";
 
 export default function Header() {
   return (
@@ -16,13 +16,16 @@ export default function Header() {
         gap: 1.5,
         padding: 1,
         paddingTop: 1.5,
+        position: "sticky",
+        top: 0,
+        zIndex: 1000,
       }}
     >
-      <Box>
+      {/* <Box>
         <IconButton size='large' sx={{ color: "white", fontSize: "3rem" }}>
           <Menu fontSize='inherit' />
         </IconButton>
-      </Box>
+      </Box> */}
       <Box>
         <img src={logo} alt='Logo' style={{ width: 60 }} />
       </Box>
@@ -34,14 +37,17 @@ export default function Header() {
           paddingLeft: 2,
         }}
       >
-        <Typography variant='h4' sx={{ fontWeight: 700, lineHeight: 0.9 }}>
-          MARK GORMELY
+        <Typography
+          variant='h4'
+          sx={{ fontWeight: 700, lineHeight: 1, textTransform: "uppercase" }}
+        >
+          Mark Gormley
         </Typography>
         <Typography
           sx={{ color: "secondary.main", letterSpacing: 1 }}
           variant='body1'
         >
-          Thornton City Council
+          Thornton City Council - Ward 3
         </Typography>
       </Box>
       <Box sx={{ flexGrow: 1 }}></Box>

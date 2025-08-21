@@ -21,7 +21,7 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 export default function QuiltedImageList() {
   return (
     <ImageList
-      sx={{ width: "100%", height: 500 }}
+      sx={{ width: "100%", height: 500, borderRadius: 2 }}
       variant='quilted'
       cols={4}
       rowHeight={121}
@@ -32,11 +32,7 @@ export default function QuiltedImageList() {
           cols={item.cols || 1}
           rows={item.rows || 1}
         >
-          <img
-            {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item.title}
-            loading='lazy'
-          />
+          <img {...srcset(item.img, 121, item.rows, item.cols)} />
         </ImageListItem>
       ))}
     </ImageList>
@@ -45,12 +41,7 @@ export default function QuiltedImageList() {
 
 const itemData = [
   {
-    img: image1,
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: image3,
+    img: image14,
     rows: 2,
     cols: 2,
   },
@@ -58,23 +49,26 @@ const itemData = [
     img: image11,
     rows: 2,
   },
-
   {
     img: image4,
-    title: "Coffee",
     rows: 2,
   },
+
   {
-    img: image5,
-    title: "Hats",
-  },
-  {
-    img: image9,
-  },
-  {
-    img: image14,
+    img: image1,
   },
   {
     img: image13,
+  },
+  {
+    img: image3,
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: image5,
+  },
+  {
+    img: image9,
   },
 ];

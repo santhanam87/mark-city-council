@@ -3,18 +3,25 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
-export default function SpotLight() {
+type SpotLightProps = {
+  title: string;
+  description: React.ReactNode;
+  imageUrl: string;
+  onButtonClick: () => void;
+};
+
+export default function SpotLight(props: SpotLightProps) {
   return (
-    <Box sx={{ display: "flex", flexDirection: "row", gap: 2, marginY: 2 }}>
-      <Box
-        sx={{
-          flexGrow: 1,
-          marginY: 2,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
+    <Box
+      sx={{
+        display: "flex",
+        backgroundColor: "grey.100",
+        padding: 2,
+        borderRadius: 2,
+        marginBottom: 4,
+      }}
+    >
+      <Box sx={{ flex: 1, p: 2 }}>
         <Typography
           variant='h4'
           sx={{
@@ -26,27 +33,43 @@ export default function SpotLight() {
           }}
           color='primary'
         >
-          Who is Mark Gormley?
+          {props.title}
         </Typography>
         <Divider sx={{ marginY: 2 }} />
-        <Typography variant='h5' sx={{ lineHeight: 1.5 }}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
-          exercitationem ipsam adipisci porro impedit voluptatibus iste aut id
-          aliquid doloribus eveniet dolorum accusamus quaerat voluptatem numquam
-          aspernatur quas, sit consequuntur. Nesciunt delectus quod illum dolore
-          asperiores voluptas beatae, velit laudantium nisi dolores voluptatibus
-          nam quisquam minima laboriosam excepturi optio magni exercitationem
-          doloribus voluptatum deserunt odit.
-        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 3,
+            alignItems: "flex-start",
+          }}
+        >
+          <Box>
+            <img
+              src={props.imageUrl}
+              alt='Spotlight'
+              style={{
+                borderRadius: 8,
+                width: 300,
+                objectFit: "cover",
+              }}
+            />
+          </Box>
+          <Box>
+            <Typography variant='h5' sx={{ lineHeight: 1.5 }}>
+              {props.description}
+            </Typography>
 
-        <Box textAlign={"right"}>
-          <Button
-            sx={{ marginTop: 2, fontSize: "1.2rem" }}
-            variant='contained'
-            color='primary'
-          >
-            Learn More
-          </Button>
+            <Box textAlign={"right"}>
+              <Button
+                sx={{ marginTop: 2, fontSize: "1.2rem" }}
+                variant='contained'
+                color='primary'
+                onClick={props.onButtonClick}
+              >
+                Learn More
+              </Button>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>
