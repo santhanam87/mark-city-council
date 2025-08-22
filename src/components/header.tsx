@@ -1,9 +1,7 @@
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import logo from "../assets/logo.svg";
-// import { Menu } from "@mui/icons-material";
-// import IconButton from "@mui/material/IconButton";
+import Logo from "./logo";
+import Stack from "@mui/material/Stack";
 
 export default function Header() {
   return (
@@ -26,31 +24,37 @@ export default function Header() {
           <Menu fontSize='inherit' />
         </IconButton>
       </Box> */}
-      <Box>
-        <img src={logo} alt='Logo' style={{ width: 60 }} />
-      </Box>
-      <Box
-        sx={{
-          color: "white",
-          borderLeft: "5px solid ",
-          borderColor: "primary.dark",
-          paddingLeft: 2,
-        }}
-      >
-        <Typography
-          variant='h4'
-          sx={{ fontWeight: 700, lineHeight: 1, textTransform: "uppercase" }}
+      <Logo />
+      <Box sx={{ flexGrow: 1 }}>
+        <Stack
+          direction={"row"}
+          sx={{
+            color: "common.white",
+            justifyContent: "flex-start",
+            paddingLeft: 10,
+          }}
+          spacing={2}
         >
-          Mark Gormley
-        </Typography>
-        <Typography
-          sx={{ color: "secondary.main", letterSpacing: 1 }}
-          variant='body1'
-        >
-          Thornton City Council - Ward 3
-        </Typography>
+          <Button
+            variant='text'
+            sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
+          >
+            Home
+          </Button>
+          <Button
+            variant='text'
+            sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
+          >
+            About Mark Gormley
+          </Button>
+          <Button
+            variant='text'
+            sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
+          >
+            Why Mark Gormley
+          </Button>
+        </Stack>
       </Box>
-      <Box sx={{ flexGrow: 1 }}></Box>
       <Box>
         <Button
           variant='contained'

@@ -44,7 +44,6 @@ function App() {
           }
           onButtonClick={() => console.log("Button clicked")}
         />
-
         <Typography
           variant='h4'
           sx={{
