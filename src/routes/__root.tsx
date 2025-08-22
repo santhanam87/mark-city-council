@@ -8,7 +8,6 @@ import { ThemeProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
@@ -30,9 +29,7 @@ export const Route = createRootRoute({
       <CssBaseline />
       <Box sx={{ backgroundColor: "grey.50" }}>
         <Header />
-        <Container maxWidth='lg'>
-          <Outlet />
-        </Container>
+        <Outlet />
         <Footer />
       </Box>
       <TanStackRouterDevtools />

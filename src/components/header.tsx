@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Logo from "./logo";
 import Stack from "@mui/material/Stack";
+import { RouteLink } from "./route-link";
 
 export default function Header() {
   return (
@@ -35,24 +36,22 @@ export default function Header() {
           }}
           spacing={2}
         >
-          <Button
-            variant='text'
+          <RouteLink
+            label='HOME'
+            to='/'
             sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
-          >
-            Home
-          </Button>
-          <Button
-            variant='text'
+          />
+          <RouteLink
+            label='ABOUT MARK GORMLEY'
+            to='/about'
             sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
-          >
-            About Mark Gormley
-          </Button>
-          <Button
-            variant='text'
+          />
+
+          <RouteLink
+            label='WHY MARK GORMLEY'
+            to='/why-mark'
             sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
-          >
-            Why Mark Gormley
-          </Button>
+          />
         </Stack>
       </Box>
       <Box>
