@@ -3,9 +3,11 @@ import whoIsMarkImage from "../assets/10.jpg";
 import whyVoteMarkImage from "../assets/3.jpg";
 import QuiltedImageList from "../components/image-list";
 import Container from "@mui/material/Container";
+import { useNavigate } from "@tanstack/react-router";
 
 import WhatISupport from "../components/what-i-support";
 function HomePage() {
+  const navigate = useNavigate({ from: "/" });
   return (
     <>
       <QuiltedImageList />
@@ -14,7 +16,9 @@ function HomePage() {
           imageUrl={whoIsMarkImage}
           title='Who is Mark Gormley?'
           description='Mark was born in Bronx, NY to a 15-year-old mother and 17-year-old father and was given up for adoption. Adopted by a very loving couple in Brooklyn, NY (the second of their two adoptions), the family moved to New Jersey where Mark grew up. Mark attended college at Georgetown University in Washington, DC, majoring in International Economics, and moved to California after graduation -- following his parents and wider family who all moved to California.'
-          onButtonClick={() => console.log("Button clicked")}
+          onButtonClick={() => {
+            navigate({ to: "/about" });
+          }}
         />
         <SpotLight
           imageUrl={whyVoteMarkImage}
@@ -31,7 +35,9 @@ function HomePage() {
               government.
             </>
           }
-          onButtonClick={() => console.log("Button clicked")}
+          onButtonClick={() => {
+            navigate({ to: "/why-mark" });
+          }}
         />
         <WhatISupport />
       </Container>
