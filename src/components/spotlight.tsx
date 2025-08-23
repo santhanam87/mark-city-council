@@ -7,7 +7,7 @@ type SpotLightProps = {
   title: string;
   description: React.ReactNode;
   imageUrl: string;
-  onButtonClick: () => void;
+  onButtonClick?: () => void;
 };
 
 export default function SpotLight(props: SpotLightProps) {
@@ -15,10 +15,10 @@ export default function SpotLight(props: SpotLightProps) {
     <Box
       sx={{
         display: "flex",
-        backgroundColor: "grey.100",
+        backgroundColor: "grey.200",
         padding: 2,
         borderRadius: 2,
-        marginBottom: 4,
+        marginY: 4,
       }}
     >
       <Box sx={{ flex: 1, p: 2 }}>
@@ -58,17 +58,18 @@ export default function SpotLight(props: SpotLightProps) {
             <Typography variant='h5' sx={{ lineHeight: 1.5 }}>
               {props.description}
             </Typography>
-
-            <Box textAlign={"right"}>
-              <Button
-                sx={{ marginTop: 2, fontSize: "1.2rem" }}
-                variant='contained'
-                color='primary'
-                onClick={props.onButtonClick}
-              >
-                Learn More
-              </Button>
-            </Box>
+            {props.onButtonClick && (
+              <Box textAlign={"right"}>
+                <Button
+                  sx={{ marginTop: 2, fontSize: "1.2rem" }}
+                  variant='contained'
+                  color='primary'
+                  onClick={props.onButtonClick}
+                >
+                  Learn More
+                </Button>
+              </Box>
+            )}
           </Box>
         </Box>
       </Box>

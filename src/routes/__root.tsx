@@ -27,7 +27,7 @@ export const Route = createRootRoute({
   component: () => (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ backgroundColor: "grey.50" }}>
+      <Box>
         <Header />
         <Outlet />
         <Footer />

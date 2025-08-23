@@ -12,7 +12,8 @@ const BasicLinkComponent = forwardRef<
   return (
     <Button
       component='a'
-      variant='text'
+      variant='contained'
+      disableElevation
       ref={ref}
       href={props.href}
       sx={props.sx}
