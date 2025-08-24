@@ -10,8 +10,9 @@ import { srcset } from "../util/srcset";
 import image1 from "../assets/4.jpg";
 import image2 from "../assets/15.jpg";
 import image3 from "../assets/7.jpeg";
+import useBreakPoint from "../hooks/useBreakPoint";
 
-const itemData = [
+const desktopImages = [
   {
     img: image2,
     cols: 3,
@@ -29,7 +30,17 @@ const itemData = [
   },
 ];
 
+const mobileImages = [
+  {
+    img: image3,
+    cols: 8,
+    rows: 3,
+  },
+];
+
 function AboutMarkPage() {
+  const isTabletAndOver = useBreakPoint("md");
+  const images = isTabletAndOver ? desktopImages : mobileImages;
   return (
     <Container maxWidth='lg'>
       <Box sx={{ flex: 1, p: 2 }}>
@@ -37,7 +48,7 @@ function AboutMarkPage() {
           variant='h4'
           sx={{
             fontWeight: 700,
-            fontSize: "2rem",
+            fontSize: isTabletAndOver ? 32 : 20,
             textTransform: "uppercase",
             borderLeft: "5px solid",
             paddingLeft: 2,
@@ -48,12 +59,16 @@ function AboutMarkPage() {
         </Typography>
         <Divider sx={{ marginY: 2 }} />
         <ImageList
-          sx={{ width: "100%", height: 500, marginY: 2 }}
+          sx={{
+            width: "100%",
+            height: isTabletAndOver ? 500 : 380,
+            marginY: 2,
+          }}
           variant='quilted'
           cols={8}
           rowHeight={121}
         >
-          {itemData.map((item) => (
+          {images.map((item) => (
             <ImageListItem
               key={item.img}
               cols={item.cols || 1}
@@ -63,7 +78,10 @@ function AboutMarkPage() {
             </ImageListItem>
           ))}
         </ImageList>
-        <Typography variant='h5' sx={{ lineHeight: "1.7" }}>
+        <Typography
+          variant={isTabletAndOver ? "h5" : "h6"}
+          sx={{ lineHeight: "1.7" }}
+        >
           Mark was born in Bronx, NY to a 15-year-old mother and 17-year-old
           father and was given up for adoption. Adopted by a very loving couple
           in Brooklyn, NY (the second of their two adoptions), the family moved

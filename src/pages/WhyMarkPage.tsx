@@ -10,8 +10,9 @@ import { srcset } from "../util/srcset";
 import image1 from "../assets/3.jpg";
 import image2 from "../assets/11.jpg";
 import image3 from "../assets/14.jpg";
+import useBreakPoint from "../hooks/useBreakPoint";
 
-const itemData = [
+const desktopImages = [
   {
     img: image2,
     cols: 4,
@@ -29,7 +30,17 @@ const itemData = [
   },
 ];
 
+const mobileImages = [
+  {
+    img: image3,
+    cols: 8,
+    rows: 3,
+  },
+];
+
 function WhyMarkPage() {
+  const isTabletAndOver = useBreakPoint("md");
+  const images = isTabletAndOver ? desktopImages : mobileImages;
   return (
     <Container maxWidth='lg'>
       <Box sx={{ flex: 1, p: 2 }}>
@@ -37,7 +48,7 @@ function WhyMarkPage() {
           variant='h4'
           sx={{
             fontWeight: 700,
-            fontSize: "2rem",
+            fontSize: isTabletAndOver ? 32 : 20,
             textTransform: "uppercase",
             borderLeft: "5px solid",
             paddingLeft: 2,
@@ -48,12 +59,16 @@ function WhyMarkPage() {
         </Typography>
         <Divider sx={{ marginY: 2 }} />
         <ImageList
-          sx={{ width: "100%", height: 500, marginY: 2 }}
+          sx={{
+            width: "100%",
+            height: isTabletAndOver ? 500 : 370,
+            marginY: 2,
+          }}
           variant='quilted'
           cols={8}
           rowHeight={121}
         >
-          {itemData.map((item) => (
+          {images.map((item) => (
             <ImageListItem
               key={item.img}
               cols={item.cols || 1}
@@ -77,7 +92,10 @@ function WhyMarkPage() {
           Council solely for the benefit of the City of Thornton and its
           citizens.
         </Typography>
-        <Typography variant='h5' sx={{ lineHeight: "1.7" }}>
+        <Typography
+          variant={isTabletAndOver ? "h5" : "h6"}
+          sx={{ lineHeight: "1.7" }}
+        >
           I see serving on City Council as Public Service -- not “political” and
           not for patronage purposes. I am not a career politician. I’m a Civil
           Servant.

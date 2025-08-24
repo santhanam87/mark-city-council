@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, IconButton, Paper } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import useBreakPoint from "../hooks/useBreakPoint";
 
 type TextHighlightThumbnailProps = {
   title: string;
@@ -10,33 +11,42 @@ type TextHighlightThumbnailProps = {
 export const TextHighlightThumbnail: React.FC<TextHighlightThumbnailProps> = ({
   title,
   onClick,
-}) => (
-  <Paper
-    elevation={0}
-    sx={{
-      display: "flex",
-      paddingX: 4,
-      paddingY: 3,
-      flex: 1,
-      fontSize: "1.3rem",
-      border: "1px solid",
-      borderColor: "divider",
-      cursor: "pointer",
-      "&:hover": {
-        backgroundColor: "primary.main",
-        color: "white",
-      },
-      "&:hover .MuiSvgIcon-root": {
-        color: "white",
-      },
-    }}
-    onClick={onClick}
-  >
-    <Typography sx={{ flex: 1 }} fontWeight={500} fontSize={24} color='inherit'>
-      {title}
-    </Typography>
-    <IconButton edge='end' size='small' disableRipple sx={{ ml: 1 }}>
-      <ArrowForwardIosIcon />
-    </IconButton>
-  </Paper>
-);
+}) => {
+  const isTabletAndOver = useBreakPoint("md");
+
+  return (
+    <Paper
+      elevation={0}
+      sx={{
+        display: "flex",
+        paddingX: 4,
+        paddingY: 3,
+        fontSize: "1.3rem",
+        borderBottom: "1px solid",
+        borderColor: "divider",
+        margin: 0,
+        cursor: "pointer",
+        "&:hover": {
+          backgroundColor: "primary.main",
+          color: "white",
+        },
+        "&:hover .MuiSvgIcon-root": {
+          color: "white",
+        },
+      }}
+      onClick={onClick}
+    >
+      <Typography
+        sx={{ flex: 1 }}
+        fontWeight={500}
+        fontSize={isTabletAndOver ? 24 : 20}
+        color='inherit'
+      >
+        {title}
+      </Typography>
+      <IconButton edge='end' size='small' disableRipple sx={{ ml: 1 }}>
+        <ArrowForwardIosIcon />
+      </IconButton>
+    </Paper>
+  );
+};

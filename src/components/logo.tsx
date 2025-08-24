@@ -1,8 +1,10 @@
 import Box from "@mui/material/Box";
 import logo from "../assets/logo.svg";
 import Typography from "@mui/material/Typography";
-
+import useBreakPoint from "../hooks/useBreakPoint";
 function Logo() {
+  const isTabletAndOver = useBreakPoint("md");
+
   return (
     <Box
       sx={{
@@ -12,12 +14,15 @@ function Logo() {
         gap: 2,
       }}
     >
-      <Box>
-        <img src={logo} alt='Logo' style={{ width: 80 }} />
-      </Box>
+      {isTabletAndOver && (
+        <Box>
+          <img src={logo} alt='Logo' style={{ width: 60 }} />
+        </Box>
+      )}
+
       <Box>
         <Typography
-          variant='h4'
+          variant='h5'
           sx={{
             fontWeight: 700,
             textTransform: "uppercase",
@@ -26,6 +31,7 @@ function Logo() {
             paddingBottom: 0.5,
             letterSpacing: 1.5,
             lineHeight: 1,
+            textAlign: isTabletAndOver ? "left" : "center",
           }}
         >
           Mark Gormley
@@ -36,6 +42,7 @@ function Logo() {
             lineHeight: 1,
             paddingTop: 1,
             borderColor: "common.white",
+            textAlign: isTabletAndOver ? "left" : "center",
           }}
           variant='body1'
         >

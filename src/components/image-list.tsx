@@ -11,6 +11,7 @@ import image9 from "../assets/9.jpg";
 import image11 from "../assets/11.jpg";
 import image13 from "../assets/13.jpg";
 import image14 from "../assets/14.jpg";
+import useBreakPoint from "../hooks/useBreakPoint";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
@@ -20,8 +21,31 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
     }&fit=crop&auto=format&dpr=2 2x`,
   };
 }
+const mobileImages = [
+  {
+    img: image14,
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: image11,
+    cols: 2,
+    rows: 2,
+  },
 
-const itemData = [
+  {
+    img: image3,
+    cols: 2,
+    rows: 2,
+  },
+
+  {
+    img: image1,
+    cols: 2,
+    rows: 2,
+  },
+];
+const desktopImages = [
   {
     img: image14,
     cols: 2,
@@ -71,20 +95,25 @@ const itemData = [
 ];
 
 export default function QuiltedImageList() {
+  const isTabletAndOver = useBreakPoint("md");
+  const rowHeight = isTabletAndOver ? 120 : 60;
+  const cols = isTabletAndOver ? 6 : 4;
+  const images = isTabletAndOver ? desktopImages : mobileImages;
+  const imageListHeight = isTabletAndOver ? 500 : 240;
   return (
     <ImageList
-      sx={{ width: "100%", height: 500, margin: 0 }}
+      sx={{ width: "100%", height: imageListHeight, margin: 0 }}
       variant='quilted'
-      cols={6}
-      rowHeight={121}
+      cols={cols}
+      rowHeight={rowHeight}
     >
-      {itemData.map((item) => (
+      {images.map((item) => (
         <ImageListItem
           key={item.img}
           cols={item.cols || 1}
           rows={item.rows || 1}
         >
-          <img {...srcset(item.img, 121, item.rows, item.cols)} />
+          <img {...srcset(item.img, rowHeight, item.rows, item.cols)} />
         </ImageListItem>
       ))}
     </ImageList>

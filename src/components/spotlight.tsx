@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
+import useBreakPoint from "../hooks/useBreakPoint";
 
 type SpotLightProps = {
   title: string;
@@ -11,22 +12,24 @@ type SpotLightProps = {
 };
 
 export default function SpotLight(props: SpotLightProps) {
+  const isTabletAndOver = useBreakPoint("md");
+
   return (
     <Box
       sx={{
         display: "flex",
         backgroundColor: "grey.200",
-        padding: 2,
+        padding: 1,
         borderRadius: 2,
         marginY: 4,
       }}
     >
       <Box sx={{ flex: 1, p: 2 }}>
         <Typography
-          variant='h4'
+          variant={"h4"}
           sx={{
             fontWeight: 700,
-            fontSize: "2rem",
+            fontSize: isTabletAndOver ? 32 : 20,
             textTransform: "uppercase",
             borderLeft: "5px solid",
             paddingLeft: 2,
@@ -41,6 +44,7 @@ export default function SpotLight(props: SpotLightProps) {
             display: "flex",
             gap: 3,
             alignItems: "flex-start",
+            flexDirection: isTabletAndOver ? "row" : "column",
           }}
         >
           <Box>
@@ -55,13 +59,16 @@ export default function SpotLight(props: SpotLightProps) {
             />
           </Box>
           <Box>
-            <Typography variant='h5' sx={{ lineHeight: 1.5 }}>
+            <Typography
+              variant={isTabletAndOver ? "h5" : "h6"}
+              sx={{ lineHeight: 1.5 }}
+            >
               {props.description}
             </Typography>
             {props.onButtonClick && (
               <Box textAlign={"right"}>
                 <Button
-                  sx={{ marginTop: 2, fontSize: "1.2rem" }}
+                  sx={{ marginTop: 2, fontSize: 18 }}
                   variant='contained'
                   color='primary'
                   onClick={props.onButtonClick}
