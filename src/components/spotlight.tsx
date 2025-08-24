@@ -53,7 +53,7 @@ export default function SpotLight(props: SpotLightProps) {
               alt='Spotlight'
               style={{
                 borderRadius: 8,
-                width: 300,
+                width: isTabletAndOver ? 300 : "100%",
                 objectFit: "cover",
               }}
             />

@@ -25,9 +25,8 @@ export default function Header() {
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
-        gap: 1.5,
-        padding: 1,
-        paddingTop: 1.5,
+        gap: 1,
+        paddingY: 3,
         position: "sticky",
         top: 0,
         zIndex: 1000,
@@ -40,7 +39,7 @@ export default function Header() {
               setMenuVisibility(true);
             }}
             size='large'
-            sx={{ color: "white", fontSize: "3rem" }}
+            sx={{ color: "white", fontSize: "2rem" }}
           >
             <Menu fontSize='inherit' />
           </IconButton>
@@ -132,6 +131,9 @@ export default function Header() {
               to='/'
               sx={{ fontSize: "1.3rem", fontWeight: 700, color: "inherit" }}
               variant='text'
+              onClick={() => {
+                setMenuVisibility(false);
+              }}
             />
             <Divider />
             <RouteLink
@@ -139,6 +141,9 @@ export default function Header() {
               to='/about'
               sx={{ fontSize: "1.3rem", fontWeight: 700, color: "inherit" }}
               variant='text'
+              onClick={() => {
+                setMenuVisibility(false);
+              }}
             />
             <Divider />
             <RouteLink
@@ -146,6 +151,9 @@ export default function Header() {
               to='/why-mark'
               sx={{ fontSize: "1.3rem", fontWeight: 700, color: "inherit" }}
               variant='text'
+              onClick={() => {
+                setMenuVisibility(false);
+              }}
             />
             <Divider />
           </Stack>
