@@ -83,6 +83,8 @@ export default function Header() {
               size='large'
               color='secondary'
               sx={{ fontSize: "1.2rem", fontWeight: 700 }}
+              href='https://secure.actblue.com/donate/gormley4thornton-1'
+              target='_blank'
             >
               Donate
             </Button>
