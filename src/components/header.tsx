@@ -3,11 +3,20 @@ import Button from "@mui/material/Button";
 import Logo from "./logo";
 import Stack from "@mui/material/Stack";
 import { RouteLink } from "./route-link";
-import { IconButton, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Divider,
+  Drawer,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Menu from "@mui/icons-material/Menu";
+import { useState } from "react";
+import { Close } from "@mui/icons-material";
 export default function Header() {
   const theme = useTheme();
   const isTabletAndOver = useMediaQuery(theme.breakpoints.up("md"));
+  const [showMenu, setMenuVisibility] = useState(false);
 
   return (
     <Box
@@ -26,7 +35,13 @@ export default function Header() {
     >
       {!isTabletAndOver && (
         <Box>
-          <IconButton size='large' sx={{ color: "white", fontSize: "3rem" }}>
+          <IconButton
+            onClick={() => {
+              setMenuVisibility(true);
+            }}
+            size='large'
+            sx={{ color: "white", fontSize: "3rem" }}
+          >
             <Menu fontSize='inherit' />
           </IconButton>
         </Box>
@@ -74,6 +89,66 @@ export default function Header() {
           </Box>
         </>
       )}
+
+      <Drawer
+        open={showMenu}
+        onClose={() => {
+          setMenuVisibility(false);
+        }}
+      >
+        <Box
+          sx={{
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+            width: "100vw",
+            flex: 1,
+          }}
+        >
+          <IconButton
+            sx={{ position: "absolute", top: 20, right: 20 }}
+            size='large'
+            color='primary'
+            onClick={() => {
+              setMenuVisibility(false);
+            }}
+          >
+            <Close />
+          </IconButton>
+          <Stack
+            direction={"column"}
+            sx={{
+              color: "primary.main",
+              justifyContent: "flex-start",
+              paddingX: 3,
+            }}
+            gap={3}
+          >
+            <Divider />
+            <RouteLink
+              label='HOME'
+              to='/'
+              sx={{ fontSize: "1.3rem", fontWeight: 700, color: "inherit" }}
+              variant='text'
+            />
+            <Divider />
+            <RouteLink
+              label='ABOUT MARK GORMLEY'
+              to='/about'
+              sx={{ fontSize: "1.3rem", fontWeight: 700, color: "inherit" }}
+              variant='text'
+            />
+            <Divider />
+            <RouteLink
+              label='WHY MARK GORMLEY'
+              to='/why-mark'
+              sx={{ fontSize: "1.3rem", fontWeight: 700, color: "inherit" }}
+              variant='text'
+            />
+            <Divider />
+          </Stack>
+        </Box>
+      </Drawer>
     </Box>
   );
 }

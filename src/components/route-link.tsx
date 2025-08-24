@@ -7,12 +7,13 @@ const BasicLinkComponent = forwardRef<
   AnchorHTMLAttributes<HTMLAnchorElement> & {
     label?: string;
     sx: React.CSSProperties;
+    variant?: "text" | "contained" | "outlined";
   }
 >((props, ref) => {
   return (
     <Button
       component='a'
-      variant='contained'
+      variant={props.variant || "contained"}
       disableElevation
       ref={ref}
       href={props.href}

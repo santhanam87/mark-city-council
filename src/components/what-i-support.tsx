@@ -4,7 +4,6 @@ import {
   Stack,
   Dialog,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   IconButton,
 } from "@mui/material";
@@ -96,6 +95,7 @@ function WhatISupport() {
       >
         {Object.keys(issues).map((key) => (
           <TextHighlightThumbnail
+            key={key}
             onClick={() => {
               updateSelectedIssue(key);
             }}
@@ -136,9 +136,7 @@ function WhatISupport() {
           <CloseIcon />
         </IconButton>
         <DialogContent>
-          <DialogContentText sx={{ color: "primary.dark" }}>
-            {selectedIssue != "" && issues[selectedIssue].body}
-          </DialogContentText>
+          {selectedIssue != "" && issues[selectedIssue].body}
         </DialogContent>
       </Dialog>
     </>
