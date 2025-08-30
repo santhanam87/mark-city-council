@@ -1,11 +1,7 @@
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import image1 from "../assets/1.jpg";
-import image2 from "../assets/2.jpg";
 import image3 from "../assets/3.jpg";
-import image4 from "../assets/4.jpg";
 import image5 from "../assets/5.jpg";
-import image7 from "../assets/7.jpeg";
 import image8 from "../assets/8.jpg";
 import image9 from "../assets/9.jpg";
 import image11 from "../assets/11.jpg";
@@ -23,6 +19,11 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 }
 const mobileImages = [
   {
+    img: image3,
+    cols: 2,
+    rows: 2,
+  },
+  {
     img: image14,
     cols: 2,
     rows: 2,
@@ -34,49 +35,34 @@ const mobileImages = [
   },
 
   {
-    img: image3,
-    cols: 2,
+    img: image8,
     rows: 2,
-  },
-
-  {
-    img: image1,
     cols: 2,
-    rows: 2,
   },
 ];
 const desktopImages = [
   {
+    img: image3,
+    cols: 3,
+    rows: 4,
+  },
+  {
     img: image14,
-    cols: 2,
     rows: 2,
   },
   {
     img: image11,
-    cols: 2,
     rows: 2,
   },
 
-  {
-    img: image3,
-    cols: 2,
-    rows: 2,
-  },
-
-  {
-    img: image1,
-  },
-  {
-    img: image2,
-  },
-  {
-    img: image4,
-    rows: 2,
-  },
-  {
-    img: image7,
-    rows: 2,
-  },
+  // {
+  //   img: image4,
+  //   rows: 2,
+  // },
+  // {
+  //   img: image7,
+  //   rows: 2,
+  // },
   {
     img: image8,
     rows: 2,
@@ -88,9 +74,11 @@ const desktopImages = [
 
   {
     img: image5,
+    rows: 2,
   },
   {
     img: image9,
+    rows: 2,
   },
 ];
 

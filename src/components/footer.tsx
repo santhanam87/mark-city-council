@@ -31,7 +31,7 @@ function Footer() {
               sx={{ color: "common.white", fontSize: "1.2rem" }}
             />
             <RouteLink
-              label='ABOUT MARK GORMLEY'
+              label='MEET MARK GORMLEY'
               to='/about'
               sx={{ color: "common.white", fontSize: "1.2rem" }}
             />

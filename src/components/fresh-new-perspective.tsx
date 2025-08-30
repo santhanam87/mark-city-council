@@ -12,6 +12,10 @@ function FreshNewPerspective() {
       the future by handling the new array of challenges presented to it by
       higher government and to approach those challenges with a fresh outlook –
       not by looking in the rearview mirror toward the past!
+      <br />
+      Please provide me the opportunity to make the City of Thornton’s ride
+      smoother with a fresh approach, a fresh perspective, and the creativity of
+      new ideas.
     </Typography>
   );
 }

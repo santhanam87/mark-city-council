@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyMarkRouteImport } from './routes/why-mark'
+import { Route as MeetMarkRouteImport } from './routes/meet-mark'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WhyMarkRoute = WhyMarkRouteImport.update({
   id: '/why-mark',
   path: '/why-mark',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeetMarkRoute = MeetMarkRouteImport.update({
+  id: '/meet-mark',
+  path: '/meet-mark',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/meet-mark': typeof MeetMarkRoute
   '/why-mark': typeof WhyMarkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/meet-mark': typeof MeetMarkRoute
   '/why-mark': typeof WhyMarkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/meet-mark': typeof MeetMarkRoute
   '/why-mark': typeof WhyMarkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/why-mark'
+  fullPaths: '/' | '/about' | '/meet-mark' | '/why-mark'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/why-mark'
-  id: '__root__' | '/' | '/about' | '/why-mark'
+  to: '/' | '/about' | '/meet-mark' | '/why-mark'
+  id: '__root__' | '/' | '/about' | '/meet-mark' | '/why-mark'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  MeetMarkRoute: typeof MeetMarkRoute
   WhyMarkRoute: typeof WhyMarkRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/why-mark'
       fullPath: '/why-mark'
       preLoaderRoute: typeof WhyMarkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meet-mark': {
+      id: '/meet-mark'
+      path: '/meet-mark'
+      fullPath: '/meet-mark'
+      preLoaderRoute: typeof MeetMarkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  MeetMarkRoute: MeetMarkRoute,
   WhyMarkRoute: WhyMarkRoute,
 }
 export const routeTree = rootRouteImport

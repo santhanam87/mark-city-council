@@ -21,10 +21,11 @@ import GloablMatters from "./global-matters";
 import FreeSpeachPlatform from "./free-speach-platform";
 import FreshNewPerspective from "./fresh-new-perspective";
 import useBreakPoint from "../hooks/useBreakPoint";
+import LastThing from "./lastThing";
 
 const issues: Record<string, { title: string; body: ReactNode }> = {
   publicIssues: {
-    title: "Top Priorities/Advocacy, What I Support and What I Care About",
+    title: "Top Priorities/Advocacy",
     body: <PublicIssues />,
   },
   qualityOfLife: {
@@ -36,8 +37,7 @@ const issues: Record<string, { title: string; body: ReactNode }> = {
     body: <CityWideWard />,
   },
   metroDistricts: {
-    title:
-      "Metro Districts Granting and Oversight | Mark’s Metro District Explainer | 5 New-Build Experiences",
+    title: "Metro Districts Granting and Oversight",
     body: <MetroDistricts />,
   },
   municipalConcern: {
@@ -57,12 +57,16 @@ const issues: Record<string, { title: string; body: ReactNode }> = {
     body: <GloablMatters />,
   },
   freeSpeach: {
-    title: "Free Speech Platform",
+    title: "Thornton City Council Free Speech Platform",
     body: <FreeSpeachPlatform />,
   },
   freshNewPerspective: {
-    title: "Fresh New Perspectives | The Better Bird of Choice",
+    title: "Fresh New Perspectives",
     body: <FreshNewPerspective />,
+  },
+  lastThing: {
+    title: "Lastly: This is Me!",
+    body: <LastThing />,
   },
 };
 

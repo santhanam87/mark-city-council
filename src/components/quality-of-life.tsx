@@ -10,10 +10,10 @@ function QualityOfLife() {
       vein, I will support small businesses over large corporations and I will
       support homeowners and the rent-oppressed over tax avoiders and
       opportunists taking advantage of the system for their own benefit and the
-      benefit solely of their bottom lines (developers, venture capitalists, and
-      the like). I will defend the expansion of social services and mental
-      enhancement resources over exorbitant budgets for law enforcement or an
-      increase in jails.
+      benefit solely of their bottom lines (selfish developers, venture
+      capitalists, and the like). I will defend the expansion of social services
+      and mental enhancement resources over exorbitant budgets for law
+      enforcement or an increase in jails.
     </Typography>
   );
 }

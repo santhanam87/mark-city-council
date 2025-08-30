@@ -46,7 +46,7 @@ function Logo() {
           }}
           variant='body1'
         >
-          For Thronton City Council - Ward 3
+          For Thornton City Council - Ward 3
         </Typography>
       </Box>
     </Box>

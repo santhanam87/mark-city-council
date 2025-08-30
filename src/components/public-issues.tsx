@@ -26,30 +26,28 @@ function PublicIssues() {
       over access to water – unlike wars in the past over gold and other
       precious resources. Water is quickly becoming the number one concern of
       governments. Luckily Thornton had the foresight years ago through City
-      Manager Jack Ethredge’s and others’ works. <br />
+      Manager Jack Ethredge’s and others’ works. &nbsp;&nbsp;
       <a
         target='_blank'
         href='https://www.sltrib.com/news/environment/2023/09/09/colorado-city-has-been-battling/'
       >
-        Read More
+        More...
       </a>
-      .
+      .We need to honor such efforts by safeguarding the gift we have been given
+      and assure such a treasured resource is never wasted.
       <br />
+      Focus on uniting all peoples and inspiring those who are better-off to
+      contribute to helping other less-fortunate communities with their
+      concerns. One-for-all citizens and all citizens for one unified city!
       <br />
-      We need to honor such efforts by safeguarding the gift we have been given
-      and assure such a treasured resource is never wasted. Focus on uniting all
-      peoples and inspiring those who are better-off to contribute to helping
-      other less-fortunate communities with their concerns. One-for-all citizens
-      and all citizens for one unified city! <br />
       <br />
       Activism when warranted in defense of what counts for all of us; Long-time
-      activist for universal healthcare.
-      <br />
+      activist for universal healthcare.&nbsp;&nbsp;
       <a
         target='_blank'
         href='https://www.denverpost.com/2009/09/02/1000-plus-rally-in-denver-in-favor-of-health-care-reform/'
       >
-        Read More
+        More...
       </a>
     </Typography>
   );

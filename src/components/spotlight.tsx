@@ -73,7 +73,7 @@ export default function SpotLight(props: SpotLightProps) {
                   color='primary'
                   onClick={props.onButtonClick}
                 >
-                  Learn More
+                  More...
                 </Button>
               </Box>
             )}

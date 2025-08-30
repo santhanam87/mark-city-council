@@ -82,15 +82,15 @@ function WhyMarkPage() {
           variant='h5'
           sx={{
             fontStyle: "italic",
-            lineHeight: 2,
-            p: 2,
+            lineHeight: isTabletAndOver ? 2 : 1.5,
+            p: isTabletAndOver ? 2 : 1,
             backgroundColor: "grey.100",
-            m: 2,
+            m: isTabletAndOver ? 2 : 0,
+            marginBottom: 2,
           }}
         >
-          Lobby-Free and Corporate-Influence-Free Servant who will serve on City
-          Council solely for the benefit of the City of Thornton and its
-          citizens.
+          Corporate-Influence-Lobby-Free Servant who will serve on City Council
+          solely for the benefit of the City of Thornton and its citizens.
         </Typography>
         <Typography
           variant={isTabletAndOver ? "h5" : "h6"}
@@ -99,22 +99,22 @@ function WhyMarkPage() {
           I see serving on City Council as Public Service -- not “political” and
           not for patronage purposes. I am not a career politician. I’m a Civil
           Servant.
-          <br /> I want to help steer the city into the future by serving as a
-          conduit for what citizens want, as a guide to effect policies
-          best-suited to provide what is wanted, and as a buffer to protect the
-          city from the “national trickle down” impacts as they filter down to
-          the municipal level passing through state-level government.
-          <br /> I don’t have a cache of money set aside to buy the position for
-          which I offer myself as servant. I am not swallowing donations or
-          hording contributions to spend on deceptive self-gratuitous
-          advertising or political propaganda. I am “thrifty”. My largest funds
-          account are my feet for canvassing to visit citizens like you and say
-          hello. <br />I want to help put the PUBLIC back into Public Service
-          and promote civic health. The corporate and the private can contribute
-          but cannot take over and cannot “drive the car”.
-          <br /> I personally will not take credit for something I did not
-          accomplish or do, and I will contribute as much as possible to our
-          joint success.
+          <br /> I want to:
+          <ul style={{ margin: 0 }}>
+            <li>be a public servant, not a politician</li>
+            <li>serve Ward 3 residents’ needs, not special interests</li>
+            <li>
+              steer the city into the future by communicating with Ward 3
+              residents
+            </li>
+            <li>
+              advocate to effect policies that meet Ward 3 residents needs
+            </li>
+            <li>
+              help protect City of Thornton from the negative impact of
+              regional, state or national decisions
+            </li>
+          </ul>
         </Typography>
       </Box>
     </Container>

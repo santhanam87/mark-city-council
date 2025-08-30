@@ -27,6 +27,7 @@ export default function Header() {
         flexDirection: "row",
         gap: 1,
         paddingY: 3,
+        paddingX: 2,
         position: "sticky",
         top: 0,
         zIndex: 1000,
@@ -64,8 +65,8 @@ export default function Header() {
                 sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
               />
               <RouteLink
-                label='ABOUT MARK GORMLEY'
-                to='/about'
+                label='MEET MARK GORMLEY'
+                to='/meet-mark'
                 sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
               />
 
@@ -137,8 +138,8 @@ export default function Header() {
             />
             <Divider />
             <RouteLink
-              label='ABOUT MARK GORMLEY'
-              to='/about'
+              label='MEET MARK GORMLEY'
+              to='/meet-mark'
               sx={{ fontSize: "1.3rem", fontWeight: 700, color: "inherit" }}
               variant='text'
               onClick={() => {
