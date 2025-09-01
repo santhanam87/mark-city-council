@@ -4,16 +4,18 @@ function MetroDistricts() {
   return (
     <>
       <Typography variant='h6'>
-        Better regulation can be had simply by better oversight over the terms
+        Better regulation can be had simply by better oversight of the terms
         granted to Residential Metro District Development to better
         protect/promote the financial interests of homeowner taxpayers over
         developers and corporations. This is directly in the hands of each city
-        whose city council votes to pass the creation of a Metro District. City
-        Council can assess whether there is excessive profiteering from
+        whose city council votes to pass the creation of a Metro District.
+        <br />
+        City Council can assess whether there is excessive profiteering from
         infrastructure expenses, and help prevent developers from pawning-off
         excessive expenses or passing-on excessive costs in the form of bonds
         left behind by the developer for the homeowners/taxpayers to pay through
-        their tax assessments each year. <br />
+        their tax assessments each year.
+        <br />
         <br />
         <strong>Stop the Over-Privatization</strong>
         <br />

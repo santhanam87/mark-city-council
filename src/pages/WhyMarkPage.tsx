@@ -85,12 +85,13 @@ function WhyMarkPage() {
             lineHeight: isTabletAndOver ? 2 : 1.5,
             p: isTabletAndOver ? 2 : 1,
             backgroundColor: "grey.100",
-            m: isTabletAndOver ? 2 : 0,
             marginBottom: 2,
+            textAlign: "center",
           }}
         >
-          Corporate-Influence-Lobby-Free Servant who will serve on City Council
-          solely for the benefit of the City of Thornton and its citizens.
+          Corporate-Influence-Lobby-Free Civil Servant who will serve on City
+          Council solely for the benefit of the City of Thornton and its
+          citizens.
         </Typography>
         <Typography
           variant={isTabletAndOver ? "h5" : "h6"}
@@ -115,6 +116,20 @@ function WhyMarkPage() {
               regional, state or national decisions
             </li>
           </ul>
+        </Typography>
+        <Typography
+          variant='h5'
+          sx={{
+            fontStyle: "italic",
+            lineHeight: isTabletAndOver ? 2 : 1.5,
+            p: isTabletAndOver ? 2 : 1,
+            backgroundColor: "grey.100",
+            marginY: 2,
+            textAlign: "center",
+          }}
+        >
+          Civic Duty | Civic Health | Civic Self-Respect | Public Service | Not
+          Politics
         </Typography>
       </Box>
     </Container>

@@ -4,7 +4,7 @@ function SafetySecurity() {
   return (
     <Typography variant='h6'>
       The safety and security of the public and our living environment is
-      integral to our existence and livelihood, but not to the detriment of
+      integral to our existence and livelihood -- but not to the detriment of
       social services or funding general welfare and domestic tranquility
       activities and programs, and assuring essentials to a quality life.
       <br />

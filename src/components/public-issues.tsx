@@ -42,7 +42,7 @@ function PublicIssues() {
       <br />
       <br />
       Activism when warranted in defense of what counts for all of us; Long-time
-      activist for universal healthcare.&nbsp;&nbsp;
+      activist for universal healthcare, and other issues.&nbsp;&nbsp;
       <a
         target='_blank'
         href='https://www.denverpost.com/2009/09/02/1000-plus-rally-in-denver-in-favor-of-health-care-reform/'

@@ -10,7 +10,7 @@ function GloablMatters() {
       meant to benefit us locally while figuring into the greater calculus
       affecting our state and the global environment… <br />I will do my part to
       assure we continue down this path and provide the resources needed by our
-      citizens to do their part too
+      citizens to do their part too.
     </Typography>
   );
 }

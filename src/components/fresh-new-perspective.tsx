@@ -1,4 +1,5 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import owl from "../assets/owl.png";
 
 function FreshNewPerspective() {
   return (
@@ -13,9 +14,22 @@ function FreshNewPerspective() {
       higher government and to approach those challenges with a fresh outlook –
       not by looking in the rearview mirror toward the past!
       <br />
-      Please provide me the opportunity to make the City of Thornton’s ride
-      smoother with a fresh approach, a fresh perspective, and the creativity of
-      new ideas.
+      <br />
+      <Typography variant='h6' sx={{ textAlign: "center" }}>
+        Vote MARK GORMLEY! Hoot! Hoot!
+      </Typography>
+      <Box sx={{ textAlign: "center", marginY: 3 }}>
+        <img src={owl} width={128} />
+      </Box>
+      <Typography variant='h6' sx={{ textAlign: "center" }}>
+        The better bird of choice watching over Thornton and Ward 3 for you!
+      </Typography>
+      <br />
+      <Typography variant='h6' sx={{ textAlign: "center" }}>
+        Please provide me the opportunity to make the City of Thornton’s ride
+        smoother with a fresh approach, a fresh perspective, and the creativity
+        of new ideas.
+      </Typography>
     </Typography>
   );
 }

@@ -56,7 +56,7 @@ function AboutMarkPage() {
           }}
           color='primary'
         >
-          Meet Mark | Just As Much Of An American Dream As Any
+          Meet Mark | Just As Much Of An ‘American Dream’ Story As Any
         </Typography>
         <Divider sx={{ marginY: 2 }} />
         <ImageList
@@ -87,9 +87,9 @@ function AboutMarkPage() {
           father and adopted by a very loving couple in Brooklyn, NY. The family
           moved to New Jersey where Mark grew up. Mark graduated from Georgetown
           University, majoring in International Economics, spending some time in
-          Quito, Ecuador. Mark has lived in California, New York, Rhode Island,
-          North Carolina, and Florida. Mark’s home has been in Thornton since
-          1997. <br />
+          Quito, Ecuador. Mark has lived in New York, New Jersey, Washington DC,
+          California, Rhode Island, North Carolina, and Florida. Mark’s home has
+          been in Thornton since 1997.
           <br />
           Mark worked for a number of Colorado businesses over the years,
           obtained a certificate from Denver Paralegal Institute, and has taken
@@ -98,11 +98,13 @@ function AboutMarkPage() {
           Training and Technical Writing. Mark also served on the Thornton
           Assistance Funds Committee several times, as well as volunteered for
           organizations such as Habitat for Humanity and Rebuilding Metro
-          Denver, and helped with the Eastlake Street Fair.
+          Denver, and helped with the Eastlake Street Fair. Mark is also a
+          continuing community representative on the Horizon High School
+          Improvement Team.
           <br />
-          Mark’s life, education, and work experience bring varied perspectives
-          to understand issues and make decisions on City Council to serve
-          Thornton.
+          Mark’s life, education, and work experience bring wide-ranging
+          perspectives to understand issues and make decisions on City Council
+          to serve Thornton.
         </Typography>
         <MarkWork />
         <Typography
@@ -110,13 +112,12 @@ function AboutMarkPage() {
           sx={{ lineHeight: "1.7" }}
         >
           Mark’s family includes two daughters who were both born and raised in
-          Thornton. Both daughters graduated from Horizon High School, while
-          Mark’s older daughter then attended and graduated from Regis
-          University in Denver, and his younger daughter attended and graduated
-          from Seattle University in Washington state. (Generics used for
-          privacy.)
+          Thornton. Both daughters graduated from Horizon High School. Mark’s
+          older daughter attended and graduated from Regis University in Denver,
+          and his younger daughter attended and graduated from Seattle
+          University in Washington state. (Generics used for privacy.)
         </Typography>
-
+        <br />
         <Typography
           variant={isTabletAndOver ? "h5" : "h6"}
           sx={{ lineHeight: "1.7" }}

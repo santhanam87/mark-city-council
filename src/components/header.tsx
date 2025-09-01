@@ -59,6 +59,7 @@ export default function Header() {
                 color: "common.white",
                 justifyContent: "flex-start",
                 paddingLeft: 10,
+                alignItems: "center",
               }}
               spacing={2}
             >
@@ -67,12 +68,21 @@ export default function Header() {
                 to='/'
                 sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
               />
+              <Typography
+                sx={{ fontSize: "2rem", fontWeight: 700, color: "inherit" }}
+              >
+                |
+              </Typography>
               <RouteLink
                 label='MEET MARK GORMLEY'
                 to='/meet-mark'
                 sx={{ fontSize: "1.5rem", fontWeight: 700, color: "inherit" }}
               />
-
+              <Typography
+                sx={{ fontSize: "2rem", fontWeight: 700, color: "inherit" }}
+              >
+                |
+              </Typography>
               <RouteLink
                 label='WHY MARK GORMLEY'
                 to='/why-mark'

@@ -9,7 +9,7 @@ function PublicEducation() {
       beyond my second daughter’s completion of her high school education over
       four years ago, and I look forward to continuing this fall for the
       2025-2026 school year. I participate by standing up for public education
-      at other venues as well when the opportunities present themselves
+      at other venues as well when the opportunities present themselves.
     </Typography>
   );
 }
