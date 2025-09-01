@@ -1,4 +1,4 @@
-import { Paper, Stack, Typography } from "@mui/material";
+import { Box, Divider, Stack, Typography } from "@mui/material";
 
 type QuoteProps = {
   quote: string;
@@ -7,33 +7,46 @@ type QuoteProps = {
 
 function Quote({ quote, author }: QuoteProps) {
   return (
-    <Paper
-      elevation={0}
-      variant='outlined'
-      sx={{
-        paddingX: 2,
-        paddingY: 3,
-        backgroundColor: "grey.50",
-        position: "relative",
-      }}
-    >
-      <Stack>
-        <Typography variant='body1' sx={{ fontSize: 24 }}>
-          <i>{quote}</i>
-        </Typography>
-        <Typography
-          variant='subtitle1'
-          sx={{
-            fontWeight: 800,
-            marginTop: 2,
-            fontSize: 24,
-            textAlign: "right",
-          }}
-        >
-          {author}
-        </Typography>
-      </Stack>
-    </Paper>
+    <>
+      <Typography
+        variant='h4'
+        sx={{
+          fontWeight: 700,
+          textTransform: "uppercase",
+          borderLeft: "5px solid",
+          paddingLeft: 2,
+          marginTop: 5,
+        }}
+        color='primary'
+      >
+        Some of my favorite quotes...
+      </Typography>
+      <Divider sx={{ marginY: 1 }} />
+      <Box
+        sx={{
+          paddingY: 1,
+          minHeight: "150px",
+        }}
+      >
+        <Stack>
+          <Typography variant='body1' sx={{ fontSize: 32, fontWeight: 100 }}>
+            {quote}
+          </Typography>
+          <Typography
+            variant='subtitle1'
+            sx={{
+              fontWeight: 100,
+              marginTop: 2,
+              fontSize: 28,
+              textAlign: "right",
+              color: "grey.400",
+            }}
+          >
+            - {author}
+          </Typography>
+        </Stack>
+      </Box>
+    </>
   );
 }
 export default Quote;

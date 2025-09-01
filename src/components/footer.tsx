@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Logo from "./logo";
 import Stack from "@mui/material/Stack";
 import { RouteLink } from "./route-link";
 
@@ -24,18 +23,29 @@ function Footer() {
         <>
           <Stack
             direction='row'
-            sx={{ alignItems: "center", color: "secondary.main" }}
+            sx={{ alignItems: "center", color: "common.white" }}
+            gap={2}
           >
             <RouteLink
               label='HOME'
               to='/'
               sx={{ color: "common.white", fontSize: "1.2rem" }}
             />
+            <Typography
+              sx={{ fontSize: "1rem", fontWeight: 700, color: "inherit" }}
+            >
+              |
+            </Typography>
             <RouteLink
               label='MEET MARK GORMLEY'
               to='/about'
               sx={{ color: "common.white", fontSize: "1.2rem" }}
             />
+            <Typography
+              sx={{ fontSize: "1rem", fontWeight: 700, color: "inherit" }}
+            >
+              |
+            </Typography>
             <RouteLink
               label='WHY MARK GORMLEY'
               to='/why-mark'
@@ -62,16 +72,6 @@ function Footer() {
         <Typography variant='h5' sx={{ fontWeight: 700 }}>
           gormley4thornton@yahoo.com
         </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: !isTabletAndOver ? "center" : "flext-end",
-          flex: 1,
-          justifyContent: "flex-end",
-        }}
-      >
-        <Logo />
       </Box>
     </Box>
   );

@@ -9,23 +9,9 @@ import WhatISupport from "../components/what-i-support";
 import Endorsement from "../components/endorsement";
 import Quote from "../components/quote";
 import { useEffect, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { Star } from "@mui/icons-material";
-
-/**
- * 
- * 
- *
-{quote:“Treat the earth well: it was not given to you by your parents; it was loaned to you by your children. We do not inherit
-the Earth from our Ancestors; we borrow it from our Children.", author:"Native American Proverb"},
-{quote:“The only thing we have to fear is fear itself.” –- Franklin Delano Roosevelt
-{quote:“The secret of genius is to carry the spirit of the child into old age, which means never losing your enthusiasm.” –-
-Aldous Huxley
-{quote:“Our lives begin to end the day we become silent about things that matter.” -– Martin Luther King, Jr.
-{quote:“If you are depressed, you are living in the past. If you are anxious, you are living in the future. If you are at peace, you
-are living in the present.” –- Lao Tzu
-{quote:“The Possible’s slow fuse is lit by the imagination.” -– Emily Dickinson
- */
+import logo from "../assets/logo.svg";
 
 const quotes = [
   {
@@ -186,17 +172,17 @@ function HomePage() {
             <>
               I want to:
               <ul style={{ margin: 0 }}>
-                <li>be a public servant, not a politician</li>
-                <li>serve Ward 3 residents’ needs, not special interests</li>
+                <li>Be a public servant, not a politician</li>
+                <li>Serve Ward 3 residents’ needs, not special interests</li>
                 <li>
-                  steer the city into the future by communicating with Ward 3
+                  Steer the city into the future by communicating with Ward 3
                   residents
                 </li>
                 <li>
-                  advocate to effect policies that meet Ward 3 residents needs
+                  Advocate to effect policies that meet Ward 3 residents needs
                 </li>
                 <li>
-                  help protect City of Thornton from the negative impact of
+                  Help protect City of Thornton from the negative impact of
                   regional, state or national decisions
                 </li>
               </ul>
@@ -210,20 +196,22 @@ function HomePage() {
         <SpotLight
           imageUrl={whoIsMarkImage}
           title='MEET MARK GORMLEY'
-          description='Mark was born in Bronx, NY to a 15-year-old mother and 17-year-old
-          father and adopted by a very loving couple in Brooklyn, NY. The family
-          moved to New Jersey where Mark grew up. Mark graduated from Georgetown
-          University, majoring in International Economics, spending some time in
-          Quito, Ecuador. Mark has lived in California, New York, Rhode Island,
-          North Carolina, and Florida. Mark’s home has been in Thornton since
-          1997.'
+          description='Mark was born in Bronx, NY to a 15-year-old mother and 17-year-old father and adopted by a very loving couple in
+Brooklyn, NY. The family moved to New Jersey where Mark grew up. Mark graduated from Georgetown University,
+majoring in International Economics, spending some time in Quito, Ecuador. Mark has lived in New York, New Jersey,
+Washington DC, California, Rhode Island, North Carolina, and Florida. Mark’s home has been in Thornton since 1997.'
           onButtonClick={() => {
             navigate({ to: "/about" });
           }}
         />
 
         <WhatISupport />
-        <Endorsement />
+        <Stack direction={"row"} gap={5} sx={{ alignItems: "center" }}>
+          <Box sx={{ padding: 4 }}>
+            <img src={logo} alt='Logo' style={{ width: 240 }} />
+          </Box>
+          <Endorsement />
+        </Stack>
       </Container>
     </>
   );

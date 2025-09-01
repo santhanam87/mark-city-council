@@ -85,6 +85,7 @@ function WhatISupport() {
           textTransform: "uppercase",
           borderLeft: "5px solid",
           paddingLeft: 2,
+          marginTop: 4,
         }}
         color='primary'
       >
@@ -94,7 +95,7 @@ function WhatISupport() {
       <Stack
         direction='column'
         sx={{
-          marginBottom: 2,
+          marginBottom: 5,
         }}
       >
         {Object.keys(issues).map((key) => (

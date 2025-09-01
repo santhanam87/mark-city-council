@@ -33,7 +33,7 @@ const endorsements = [
 function Endorsement() {
   const isTabletAndOver = useBreakPoint("md");
   return (
-    <Box sx={{ marginY: 4 }}>
+    <Box sx={{ marginY: 4, flex: 1 }}>
       <Typography
         variant={isTabletAndOver ? "h4" : "h6"}
         sx={{

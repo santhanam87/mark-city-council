@@ -21,7 +21,7 @@ export default function SpotLight(props: SpotLightProps) {
         backgroundColor: "grey.200",
         padding: 1,
         borderRadius: 2,
-        marginY: 4,
+        marginY: 6,
       }}
     >
       <Box sx={{ flex: 1, p: 2 }}>
