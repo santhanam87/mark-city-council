@@ -12,7 +12,6 @@ import Header from "../components/header";
 import { HeadContent } from "@tanstack/react-router";
 import { Fab } from "@mui/material";
 import useBreakPoint from "../hooks/useBreakPoint";
-import { Mail } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
@@ -49,17 +48,6 @@ function RootComponent() {
           Donate
         </Fab>
       )}
-
-      <Fab
-        variant='extended'
-        href='mailto:gormely4thornton@yahoo.com'
-        target='_blank'
-        color='primary'
-        size='large'
-        sx={{ position: "fixed", bottom: "50%", right: 16 }}
-      >
-        <Mail />
-      </Fab>
     </ThemeProvider>
   );
 }

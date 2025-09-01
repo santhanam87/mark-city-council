@@ -7,6 +7,7 @@ import {
   Divider,
   Drawer,
   IconButton,
+  Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -31,6 +32,8 @@ export default function Header() {
         position: "sticky",
         top: 0,
         zIndex: 1000,
+        borderBottom: "5px solid",
+        borderColor: "secondary.light",
       }}
     >
       {!isTabletAndOver && (
@@ -77,7 +80,22 @@ export default function Header() {
               />
             </Stack>
           </Box>
-          <Box>
+          <Stack direction={"row"} gap={2}>
+            <Box
+              sx={{
+                paddingX: 4,
+                paddingY: 1,
+                border: "5px solid",
+                borderColor: "secondary.main",
+                color: "secondary.main",
+                borderRadius: 30,
+                textTransform: "uppercase",
+              }}
+            >
+              <Typography variant='h5' sx={{ fontWeight: 700 }}>
+                Election Day: November 4th 2025
+              </Typography>
+            </Box>
             <Button
               variant='contained'
               size='large'
@@ -88,7 +106,7 @@ export default function Header() {
             >
               Donate
             </Button>
-          </Box>
+          </Stack>
         </>
       )}
 

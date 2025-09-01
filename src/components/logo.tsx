@@ -27,11 +27,12 @@ function Logo() {
             fontWeight: 700,
             textTransform: "uppercase",
             color: "common.white",
-            borderBottom: "5px solid",
-            paddingBottom: 0.5,
+            borderBottom: "2px dashed",
+            paddingBottom: 1,
             letterSpacing: 1.5,
             lineHeight: 1,
-            textAlign: isTabletAndOver ? "left" : "center",
+            textAlign: "center",
+            fontSize: 32,
           }}
         >
           Mark Gormley
@@ -42,11 +43,13 @@ function Logo() {
             lineHeight: 1,
             paddingTop: 1,
             borderColor: "common.white",
-            textAlign: isTabletAndOver ? "left" : "center",
+            textAlign: "center",
+            fontSize: 20,
+            fontWeight: 700,
           }}
           variant='body1'
         >
-          For Thornton City Council - Ward 3
+          For Thornton City Council Ward 3
         </Typography>
       </Box>
     </Box>

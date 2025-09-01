@@ -42,11 +42,6 @@ const mobileImages = [
 ];
 const desktopImages = [
   {
-    img: image3,
-    cols: 3,
-    rows: 4,
-  },
-  {
     img: image14,
     rows: 2,
   },
@@ -54,15 +49,6 @@ const desktopImages = [
     img: image11,
     rows: 2,
   },
-
-  // {
-  //   img: image4,
-  //   rows: 2,
-  // },
-  // {
-  //   img: image7,
-  //   rows: 2,
-  // },
   {
     img: image8,
     rows: 2,
@@ -87,7 +73,7 @@ export default function QuiltedImageList() {
   const rowHeight = isTabletAndOver ? 120 : 60;
   const cols = isTabletAndOver ? 6 : 4;
   const images = isTabletAndOver ? desktopImages : mobileImages;
-  const imageListHeight = isTabletAndOver ? 500 : 240;
+  const imageListHeight = 246;
   return (
     <ImageList
       sx={{ width: "100%", height: imageListHeight, margin: 0 }}
@@ -96,12 +82,8 @@ export default function QuiltedImageList() {
       rowHeight={rowHeight}
     >
       {images.map((item) => (
-        <ImageListItem
-          key={item.img}
-          cols={item.cols || 1}
-          rows={item.rows || 1}
-        >
-          <img {...srcset(item.img, rowHeight, item.rows, item.cols)} />
+        <ImageListItem key={item.img} rows={item.rows || 1}>
+          <img {...srcset(item.img, rowHeight, item.rows)} />
         </ImageListItem>
       ))}
     </ImageList>

@@ -9,6 +9,8 @@ import WhatISupport from "../components/what-i-support";
 import Endorsement from "../components/endorsement";
 import Quote from "../components/quote";
 import { useEffect, useState } from "react";
+import { Box, Typography } from "@mui/material";
+import { Star } from "@mui/icons-material";
 
 /**
  * 
@@ -95,7 +97,87 @@ function HomePage() {
 
   return (
     <>
+      <Box
+        sx={{
+          backgroundColor: "common.black",
+          borderBottom: "2px solid",
+          borderColor: "common.white",
+        }}
+      >
+        <Container
+          maxWidth='lg'
+          sx={{
+            paddingY: 3,
+          }}
+        >
+          <Typography
+            variant='h3'
+            sx={{
+              color: "secondary.main",
+              fontWeight: 700,
+              fontSize: 40,
+              textAlign: "center",
+            }}
+          >
+            <Star sx={{ color: "error.main" }} />
+            <Star sx={{ color: "common.white" }} />
+            <Star sx={{ color: "primary.light" }} />
+            &nbsp;&nbsp; Vote &nbsp;
+            <Box component={"span"} sx={{ color: "common.white" }}>
+              Mark Gormley
+            </Box>
+            &nbsp; Thornton City Council Ward 3&nbsp;&nbsp;
+            <Star sx={{ color: "error.main" }} />
+            <Star sx={{ color: "common.white" }} />
+            <Star sx={{ color: "primary.light" }} />
+          </Typography>
+        </Container>
+      </Box>
       <QuiltedImageList />
+      <Box
+        sx={{
+          backgroundColor: "common.black",
+          borderBottom: "5px solid",
+          borderColor: "secondary.light",
+        }}
+      >
+        <Container
+          maxWidth='lg'
+          sx={{
+            paddingY: 3,
+          }}
+        >
+          <Typography
+            variant='h3'
+            sx={{
+              color: "common.white",
+              fontWeight: 700,
+              fontSize: 40,
+              textAlign: "center",
+            }}
+          >
+            <Star sx={{ color: "error.main" }} />
+            <Star sx={{ color: "common.white" }} />
+            <Star sx={{ color: "primary.light" }} />
+            &nbsp;&nbsp; Honest &nbsp;&nbsp;
+            <Star sx={{ color: "error.main" }} />
+            <Star sx={{ color: "common.white" }} />
+            <Star sx={{ color: "primary.light" }} />
+            &nbsp;&nbsp;
+            <Box component={"span"} sx={{ color: "secondary.main" }}>
+              Thoughtful
+            </Box>{" "}
+            &nbsp;&nbsp;
+            <Star sx={{ color: "error.main" }} />
+            <Star sx={{ color: "common.white" }} />
+            <Star sx={{ color: "primary.light" }} />
+            &nbsp;&nbsp; Inquisitive &nbsp;&nbsp;
+            <Star sx={{ color: "error.main" }} />
+            <Star sx={{ color: "common.white" }} />
+            <Star sx={{ color: "primary.light" }} />
+          </Typography>
+        </Container>
+      </Box>
       <Container maxWidth='lg'>
         <SpotLight
           imageUrl={whyVoteMarkImage}
