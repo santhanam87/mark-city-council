@@ -26,6 +26,9 @@ export const TextHighlightThumbnail: React.FC<TextHighlightThumbnailProps> = ({
         borderColor: "divider",
         margin: 0,
         cursor: "pointer",
+        "&:last-child": {
+          borderBottom: "none",
+        },
         "&:hover": {
           backgroundColor: "primary.main",
           color: "white",

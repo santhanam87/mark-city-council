@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { Star } from "@mui/icons-material";
 import logo from "../assets/logo.svg";
+import { TextHighlightThumbnail } from "../components/text-highlight-thumnail";
+import useBreakPoint from "../hooks/useBreakPoint";
 
 const quotes = [
   {
@@ -71,6 +73,8 @@ function getRandomArbitrary(max: number) {
 function HomePage() {
   const navigate = useNavigate({ from: "/" });
   const [quoteIndex, updateQuoteIndex] = useState(0);
+  const [showBananaRecipe, updateBananaRecipe] = useState(false);
+  const isTabletAndOver = useBreakPoint("md");
 
   useEffect(() => {
     const qinterval = setInterval(() => {
@@ -108,11 +112,14 @@ function HomePage() {
             <Star sx={{ color: "error.main" }} />
             <Star sx={{ color: "common.white" }} />
             <Star sx={{ color: "primary.light" }} />
+            {!isTabletAndOver && <br />}
             &nbsp;&nbsp; Vote &nbsp;
             <Box component={"span"} sx={{ color: "common.white" }}>
               Mark Gormley
             </Box>
-            &nbsp; Thornton City Council Ward 3&nbsp;&nbsp;
+            {isTabletAndOver && (
+              <>&nbsp; Thornton City Council Ward 3&nbsp;&nbsp;</>
+            )}
             <Star sx={{ color: "error.main" }} />
             <Star sx={{ color: "common.white" }} />
             <Star sx={{ color: "primary.light" }} />
@@ -133,35 +140,65 @@ function HomePage() {
             paddingY: 3,
           }}
         >
-          <Typography
-            variant='h3'
-            sx={{
-              color: "common.white",
-              fontWeight: 700,
-              fontSize: 40,
-              textAlign: "center",
-            }}
-          >
-            <Star sx={{ color: "error.main" }} />
-            <Star sx={{ color: "common.white" }} />
-            <Star sx={{ color: "primary.light" }} />
-            &nbsp;&nbsp; Honest &nbsp;&nbsp;
-            <Star sx={{ color: "error.main" }} />
-            <Star sx={{ color: "common.white" }} />
-            <Star sx={{ color: "primary.light" }} />
-            &nbsp;&nbsp;
-            <Box component={"span"} sx={{ color: "secondary.main" }}>
-              Thoughtful
-            </Box>{" "}
-            &nbsp;&nbsp;
-            <Star sx={{ color: "error.main" }} />
-            <Star sx={{ color: "common.white" }} />
-            <Star sx={{ color: "primary.light" }} />
-            &nbsp;&nbsp; Inquisitive &nbsp;&nbsp;
-            <Star sx={{ color: "error.main" }} />
-            <Star sx={{ color: "common.white" }} />
-            <Star sx={{ color: "primary.light" }} />
-          </Typography>
+          {isTabletAndOver && (
+            <Typography
+              variant='h3'
+              sx={{
+                color: "common.white",
+                fontWeight: 700,
+                fontSize: 40,
+                textAlign: "center",
+              }}
+            >
+              <Star sx={{ color: "error.main" }} />
+              <Star sx={{ color: "common.white" }} />
+              <Star sx={{ color: "primary.light" }} />
+              &nbsp;&nbsp; Honest &nbsp;&nbsp;
+              <Star sx={{ color: "error.main" }} />
+              <Star sx={{ color: "common.white" }} />
+              <Star sx={{ color: "primary.light" }} />
+              &nbsp;&nbsp;
+              <Box component={"span"} sx={{ color: "secondary.main" }}>
+                Thoughtful
+              </Box>{" "}
+              &nbsp;&nbsp;
+              <Star sx={{ color: "error.main" }} />
+              <Star sx={{ color: "common.white" }} />
+              <Star sx={{ color: "primary.light" }} />
+              &nbsp;&nbsp; Inquisitive &nbsp;&nbsp;
+              <Star sx={{ color: "error.main" }} />
+              <Star sx={{ color: "common.white" }} />
+              <Star sx={{ color: "primary.light" }} />
+            </Typography>
+          )}
+          {!isTabletAndOver && (
+            <Typography
+              variant='h3'
+              sx={{
+                color: "common.white",
+                fontWeight: 700,
+                fontSize: 24,
+                lineHeight: 1,
+                textAlign: "center",
+              }}
+            >
+              <Box sx={{ marginY: 1, textAlign: "center" }}>
+                <Star sx={{ color: "error.main" }} />
+                <Star sx={{ color: "common.white" }} />
+                <Star sx={{ color: "primary.light" }} />
+              </Box>
+              Honest &nbsp;&nbsp;
+              <Box component={"span"} sx={{ color: "secondary.main" }}>
+                Thoughtful
+              </Box>
+              &nbsp;&nbsp; Inquisitive
+              <Box sx={{ marginY: 1.5, textAlign: "center" }}>
+                <Star sx={{ color: "error.main" }} />
+                <Star sx={{ color: "common.white" }} />
+                <Star sx={{ color: "primary.light" }} />
+              </Box>
+            </Typography>
+          )}
         </Container>
       </Box>
       <Container maxWidth='lg'>
@@ -207,10 +244,63 @@ Washington DC, California, Rhode Island, North Carolina, and Florida. Mark’s h
 
         <WhatISupport />
         <Stack direction={"row"} gap={5} sx={{ alignItems: "center" }}>
-          <Box sx={{ padding: 4 }}>
-            <img src={logo} alt='Logo' style={{ width: 240 }} />
-          </Box>
+          {isTabletAndOver && (
+            <Box sx={{ padding: 4 }}>
+              <img src={logo} alt='Logo' style={{ width: 240 }} />
+            </Box>
+          )}
+
           <Endorsement />
+        </Stack>
+        <Stack
+          direction={"column"}
+          sx={{
+            marginY: 3,
+            border: "1px solid",
+            borderColor: "divider",
+          }}
+        >
+          <TextHighlightThumbnail
+            title={"You got all the way down here, now have some fun..."}
+            onClick={() => {
+              updateBananaRecipe(!showBananaRecipe);
+            }}
+          />
+          {showBananaRecipe && (
+            <Box sx={{ p: 5, backgroundColor: "grey.100" }}>
+              <Typography variant='h6' sx={{ marginBottom: 3 }}>
+                Mark’s Banana Bread (or Muffins) Recipe He’s Been Making for 40+
+                Years.
+              </Typography>
+              <Typography variant='caption' sx={{ fontSize: 20 }}>
+                Ingredients:
+              </Typography>
+              <ul>
+                <li>3 ripe bananas</li>
+                <li>
+                  1 cup sugar (I usually cut this down to 1/2 -cup as I add
+                  other items like chocolate chips and/or craisins)
+                </li>
+                <li>1 egg</li>
+                <li>
+                  1-1/2 cups flour (I use 3/4-cup unbleached white and 3/4-cup
+                  whole wheat)
+                </li>
+                <li>1/4 cup melted (cooled) butter</li>
+                <li>1 teaspoon baking powder (yes, powder; not soda)</li>
+              </ul>
+
+              <Typography>
+                Mash bananas with a fork; stir in remaining ingredients in
+                listed order.
+                <br /> Optionally, but I add 1/2 cup of each: coarsely chops
+                walnuts, craisins, and chocolate chips. <br />
+                Stir to blend well.
+                <br /> Spoon into a loaf pan or into a 12-muffin pan to make
+                individual servings. Bake at 325 degrees for 50 minutes.
+              </Typography>
+            </Box>
+          )}
         </Stack>
       </Container>
     </>

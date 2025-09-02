@@ -1,6 +1,5 @@
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import image3 from "../assets/3.jpg";
 import image5 from "../assets/5.jpg";
 import image8 from "../assets/8.jpg";
 import image9 from "../assets/9.jpg";
@@ -19,25 +18,18 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 }
 const mobileImages = [
   {
-    img: image3,
-    cols: 2,
-    rows: 2,
+    img: image13,
   },
   {
     img: image14,
-    cols: 2,
-    rows: 2,
   },
   {
     img: image11,
-    cols: 2,
-    rows: 2,
   },
 
   {
     img: image8,
-    rows: 2,
-    cols: 2,
+    rows: 1,
   },
 ];
 const desktopImages = [
@@ -70,8 +62,8 @@ const desktopImages = [
 
 export default function QuiltedImageList() {
   const isTabletAndOver = useBreakPoint("md");
-  const rowHeight = isTabletAndOver ? 120 : 60;
-  const cols = isTabletAndOver ? 6 : 4;
+  const rowHeight = isTabletAndOver ? 120 : 120;
+  const cols = isTabletAndOver ? 6 : 2;
   const images = isTabletAndOver ? desktopImages : mobileImages;
   const imageListHeight = 246;
   return (
@@ -82,8 +74,8 @@ export default function QuiltedImageList() {
       rowHeight={rowHeight}
     >
       {images.map((item) => (
-        <ImageListItem key={item.img} rows={item.rows || 1}>
-          <img {...srcset(item.img, rowHeight, item.rows)} />
+        <ImageListItem key={item.img} rows={item?.rows ?? 1}>
+          <img {...srcset(item.img, rowHeight, 1)} />
         </ImageListItem>
       ))}
     </ImageList>

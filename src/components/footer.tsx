@@ -69,7 +69,7 @@ function Footer() {
         }}
       >
         <Mail />
-        <Typography variant='h5' sx={{ fontWeight: 700 }}>
+        <Typography variant='h5' sx={{ fontWeight: 700, fontSize: 16 }}>
           gormley4thornton@yahoo.com
         </Typography>
       </Box>
